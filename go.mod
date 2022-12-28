@@ -1,4 +1,4 @@
-module github.com/tomdebout/API_rest
+module github.com/tomdebout/first_GOLang_API_rest
 
 go 1.19
 

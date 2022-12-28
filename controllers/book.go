@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/tomdebout/API_rest/models"
+	"github.com/tomdebout/first_GOLang_API_rest/models"
 )
 
 var Library []models.Book

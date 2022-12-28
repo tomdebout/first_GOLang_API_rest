@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/tomdebout/API_rest/controllers"
+	"github.com/tomdebout/first_GOLang_API_rest/controllers"
 )
 
 func main() {

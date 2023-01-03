@@ -11,6 +11,6 @@ docker-compose up --build
 You can test this API with path: http://localhost:8080
 
 ## Method
-GET: /books
-POST: /books
+GET: /books<br />
+POST: /books<br />
 DELETE: /books/:id

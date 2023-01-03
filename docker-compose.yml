@@ -1,0 +1,51 @@
+version: '3.1'
+
+services:
+  api:
+    container_name: book-api
+    build: ./
+    ports: 
+      - 8080:8080 
+    restart: always
+    volumes:
+      # - api:/usr/src/app/
+      - ./:/src
+    depends_on:
+      - postgres       
+    networks:
+      - booksws
+  postgres:
+    image: postgres:15-alpine
+    container_name: book-postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - booksws
+  pg-admin:
+    image: dpage/pgadmin4
+    container_name: book-pg-admin
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=5050
+
+    ports:
+      - "5050:5050"
+    networks:
+      - booksws
+
+
+volumes:
+  data:
+  api:
+networks:
+  booksws:
+    driver: bridge

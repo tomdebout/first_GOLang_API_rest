@@ -8,3 +8,9 @@ Start docker on your device
 ```
 docker-compose up --build
 ```
+You can test this API with path: http://localhost:8080
+
+## Method
+GET: /books
+POST: /books
+DELETE: /books/:id
